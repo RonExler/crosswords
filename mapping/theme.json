@@ -1,23 +1,23 @@
 {
-  "description": "Aged nautical charts rendered in indigo ink on yellowed parchment, with antique brass accents and period manuscript typography",
-  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&display=swap",
+  "description": "Cool slate-blue cartographic paper with deep navy ink and warm compass-brass accents, evoking hand-drawn nautical charts",
+  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap",
   "colors": {
-    "paper":       "#f0e6c8",
-    "paperMid":    "#e2d4a4",
-    "paperDark":   "#c4a870",
-    "ink":         "#1c1040",
-    "inkMid":      "#3a2868",
-    "inkLight":    "#645090",
-    "accent":      "#9a7810",
-    "accentLight": "#c8a030",
-    "cellBg":      "#faf2de",
-    "border":      "#5a3c18",
-    "hlWord":      "#d0c45c",
-    "hlCell":      "#9a7810",
-    "hlCellText":  "#fff8e0"
+    "paper":       "#d6e8f2",
+    "paperMid":    "#bbd4e8",
+    "paperDark":   "#84aece",
+    "ink":         "#0b1e30",
+    "inkMid":      "#183d5e",
+    "inkLight":    "#2a638c",
+    "accent":      "#b87600",
+    "accentLight": "#e09a10",
+    "cellBg":      "#ecf4fa",
+    "border":      "#1c3f60",
+    "hlWord":      "#a8d0ee",
+    "hlCell":      "#1a5c9c",
+    "hlCellText":  "#e8f4ff"
   },
   "fonts": {
-    "display": "'IM Fell English SC', Georgia, serif",
-    "body":    "'IM Fell English', Georgia, serif"
+    "display": "'Cinzel', Georgia, serif",
+    "body":    "'Crimson Text', Georgia, serif"
   }
 }

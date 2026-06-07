@@ -1,23 +1,23 @@
 {
-  "description": "Sun-warmed terracotta and chocolate brown evoking straw-padded kennels, with forest green accents suggesting growth and second chances",
-  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,400;0,700;1,400&family=Merriweather:ital,wght@0,400;0,700;1,400&display=swap",
+  "description": "Warm terracotta and espresso brown with burnt-sienna accents, evoking sun-warmed kennel floors and the earthy comfort of a shelter",
+  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,700;1,400&display=swap",
   "colors": {
-    "paper":       "#fdf0e0",
-    "paperMid":    "#f0d8b8",
-    "paperDark":   "#d4a870",
-    "ink":         "#241408",
-    "inkMid":      "#5c3018",
-    "inkLight":    "#8a5428",
-    "accent":      "#2d6a4f",
-    "accentLight": "#40916c",
-    "cellBg":      "#fffaf4",
-    "border":      "#8a5028",
-    "hlWord":      "#b7e4c7",
-    "hlCell":      "#2d6a4f",
-    "hlCellText":  "#f0fdf4"
+    "paper":       "#fae2c8",
+    "paperMid":    "#f0c8a0",
+    "paperDark":   "#d49060",
+    "ink":         "#1e0800",
+    "inkMid":      "#622a08",
+    "inkLight":    "#924828",
+    "accent":      "#c03818",
+    "accentLight": "#e05830",
+    "cellBg":      "#fef6ee",
+    "border":      "#924828",
+    "hlWord":      "#c8e8be",
+    "hlCell":      "#c03818",
+    "hlCellText":  "#fff4ee"
   },
   "fonts": {
     "display": "'Josefin Slab', Georgia, serif",
-    "body":    "'Merriweather', Georgia, serif"
+    "body":    "'Lora', Georgia, serif"
   }
 }
