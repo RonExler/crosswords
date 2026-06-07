@@ -1,109 +1,254 @@
 # Crossword Puzzles
 
-Interactive crossword puzzles deployed to [puzzles.ronexler.com](https://puzzles.ronexler.com) via Cloudflare Pages.
-
-Each puzzle has a dynamically generated visual theme derived from its topic using the Anthropic API.
+Interactive crossword puzzles at [puzzles.ronexler.com](https://puzzles.ronexler.com), hosted on Cloudflare Pages. Each puzzle has a dynamically generated visual theme derived from its topic via the Anthropic API.
 
 ---
 
-## Adding a new puzzle
+## Adding a new puzzle — step by step
 
-### 1. Create the puzzle subfolder
+### Prerequisites
 
+Make sure you have the following before starting:
+
+| Tool | Check | Install |
+|------|-------|---------|
+| Node.js 18+ | `node --version` | [nodejs.org](https://nodejs.org) |
+| Wrangler CLI | `npx wrangler --version` | included via npx |
+| Anthropic API key | — | [console.anthropic.com](https://console.anthropic.com) |
+| Cloudflare account | — | already configured |
+| Git | `git --version` | included on macOS |
+
+Clone the repo if you haven't already:
+
+```bash
+git clone https://github.com/RonExler/crosswords.git
+cd crosswords
 ```
-puzzles/
-└── mypuzzle/
-    ├── index.html
-    └── crossword.json
-```
 
-Copy `mapping/index.html` as your starting point — it already wires up the theme loader and button handlers. Change only the `<title>`, `.cw-title`, and `.cw-subtitle` text.
+---
 
-### 2. Write `crossword.json`
+### Step 1 — Create the puzzle data
 
-The format mirrors the existing puzzles:
+Each puzzle is a `crossword.json` file. The easiest way to produce one is to ask Claude with a prompt like:
+
+> "Generate a 21×21 crossword puzzle about [topic]. Return it as JSON matching this schema: [paste the schema below]."
+
+The schema is:
 
 ```json
 {
   "puzzle": {
-    "title": "My Puzzle Title",
+    "title": "Puzzle Title",
     "width": 21,
     "height": 21,
-    "grid": [ ... ],
+    "grid": [
+      [ ...row 0: 21 cells... ],
+      [ ...row 1: 21 cells... ],
+      ...21 rows total...
+    ],
     "clues": {
       "across": [
-        { "number": 1, "clue": "Clue text", "word": "ANSWER" },
-        ...
+        { "number": 1, "clue": "Clue text here", "word": "ANSWER" }
       ],
       "down": [
-        { "number": 1, "clue": "Clue text", "word": "ANSWER" },
-        ...
+        { "number": 1, "clue": "Clue text here", "word": "ANSWER" }
       ]
     }
   }
 }
 ```
 
-**Grid cells** are either `null` (black) or an object:
+**Grid cell format** — every cell in the `grid` array is one of:
+
+```json
+null
+```
+A black (blocked) square.
 
 ```json
 { "letter": "A", "number": 1, "isBlack": false }
 ```
+A white square. Fields:
+- `letter` — the correct answer letter, uppercase
+- `number` — the cell's printed number (only present when this cell starts an across or down word; omit or set `null` otherwise)
+- `isBlack` — always `false` for white cells (or omit entirely)
 
-`number` is only present on cells that start an across or down word. `isBlack: true` renders as a solid black cell (equivalent to `null`).
+**Minimal example** — a 5×5 grid spelling ONE across and ONE down from cell #1:
 
-### 3. Validate the puzzle data
+```
+■ ■ ■ ■ ■
+■ O N E ■
+■ ■ ■ ■ ■
+■ ■ ■ ■ ■
+■ ■ ■ ■ ■
+```
+
+```json
+{
+  "puzzle": {
+    "title": "Example",
+    "width": 5,
+    "height": 5,
+    "grid": [
+      [null, null, null, null, null],
+      [null, {"letter":"O","number":1,"isBlack":false}, {"letter":"N","number":null,"isBlack":false}, {"letter":"E","number":null,"isBlack":false}, null],
+      [null, null, null, null, null],
+      [null, null, null, null, null],
+      [null, null, null, null, null]
+    ],
+    "clues": {
+      "across": [
+        { "number": 1, "clue": "Not zero", "word": "ONE" }
+      ],
+      "down": []
+    }
+  }
+}
+```
+
+Standard crossword grids are 15×15 or 21×21 with rotational symmetry. The engine works with any rectangular size.
+
+---
+
+### Step 2 — Create the puzzle folder
+
+Pick a short, URL-safe folder name (lowercase, no spaces). Example: `space`, `cooking`, `jazz`.
+
+```bash
+mkdir mypuzzle
+```
+
+Copy an existing puzzle page as your starting point:
+
+```bash
+cp mapping/index.html mypuzzle/index.html
+```
+
+Edit `mypuzzle/index.html` — change exactly three things:
+
+1. `<title>` tag
+2. `.cw-title` div text
+3. `.cw-subtitle` div text
+
+Everything else (script tags, button IDs, layout) stays identical.
+
+Place your `crossword.json` in the folder:
+
+```
+mypuzzle/
+├── index.html       ← copied and edited above
+└── crossword.json   ← your puzzle data
+```
+
+---
+
+### Step 3 — Validate the puzzle data
 
 ```bash
 node tests/validate.js mypuzzle
 ```
 
-This catches common authoring errors:
-- Clue number has no matching numbered cell in the grid
-- Clue `word` doesn't match what the grid traces for that number and direction
-- Duplicate clue numbers
-- Words shorter than 2 letters
+**What it checks:**
+- Every clue number references a real numbered cell in the grid
+- Every clue `word` matches the letters the grid traces in that direction from that cell
+- No duplicate clue numbers within a direction
+- No cells that have a number but no corresponding clue
+- No words shorter than 2 letters
 
-Fix any errors before continuing.
-
-### 4. Generate the theme
-
-```bash
-ANTHROPIC_API_KEY=sk-... node scripts/generate-theme.js mypuzzle
+**Example output when all is well:**
+```
+[mypuzzle] OK
 ```
 
-This calls `claude-opus-4-8` with the puzzle title and word list and writes `mypuzzle/theme.json`. The theme includes:
+**Example output with errors:**
+```
+[mypuzzle] ERROR: down clue #2 (EXAMPLE): no cell numbered 2 in grid
+[mypuzzle] ERROR: across clue #5: word "ANSWER" but grid traces "ANSWR"
+```
 
-| Field | Description |
-|-------|-------------|
-| `description` | One-sentence aesthetic description |
-| `googleFontsUrl` | Google Fonts CSS2 URL for display + body fonts |
-| `colors.paper` | Page background |
-| `colors.ink` | Primary text + black cells |
-| `colors.accent` / `accentLight` | Active clue border, toggle button |
-| `colors.hlWord` / `hlCell` | Word highlight / selected cell |
-| `colors.border` | Grid lines |
-| `fonts.display` / `body` | CSS font-family strings |
+Fix all errors before continuing. Common mistakes:
+- Clue number doesn't match any cell's `number` field → check you copied the number correctly from the grid
+- Word mismatch → the grid letters don't spell the word you wrote in the clue
 
-You can hand-edit `theme.json` to adjust any values before deploying.
+---
 
-### 5. Add the puzzle to the gallery
+### Step 4 — Generate the theme
 
-Edit `index.html` at the project root and add a new `<a class="puzzle-card">` entry:
+```bash
+ANTHROPIC_API_KEY=sk-ant-... node scripts/generate-theme.js mypuzzle
+```
+
+This calls Claude with the puzzle title and full word list and writes `mypuzzle/theme.json`. The theme defines:
+
+- A color palette (background, ink, accents, highlights, grid lines)
+- A Google Fonts URL for two typefaces (display + body)
+- A one-sentence aesthetic description
+
+Example output:
+```
+[mypuzzle] Wrote theme.json — Starlit observatory blues with silver-white ink and cosmic-amber accents
+```
+
+**Tweaking the theme** — open `mypuzzle/theme.json` and edit any color or font by hand before deploying. All colors are 6-digit hex. Fonts must be available on [Google Fonts](https://fonts.google.com).
+
+If you don't have an API key yet, you can skip this step and write `theme.json` by hand using the format from `mapping/theme.json` as a template. The puzzle will fall back to the default vintage-paper style if `theme.json` is missing.
+
+---
+
+### Step 5 — Add the puzzle to the gallery
+
+Edit `index.html` at the root of the project. Find the `<div class="puzzle-grid">` block and add a new card:
 
 ```html
 <a class="puzzle-card" href="/mypuzzle/">
   <div class="puzzle-card-num">No. III</div>
   <h2 class="puzzle-card-title">My Puzzle Title</h2>
-  <p class="puzzle-card-theme">Brief description of the theme</p>
+  <p class="puzzle-card-theme">One sentence describing the theme</p>
   <span class="puzzle-card-cta">Solve →</span>
 </a>
 ```
 
-### 6. Deploy to Cloudflare Pages
+Increment the number (`No. III`, `No. IV`, etc.) to match the new puzzle's position.
+
+---
+
+### Step 6 — Test locally
+
+```bash
+npx http-server . -p 8765
+```
+
+Open [http://localhost:8765/mypuzzle/](http://localhost:8765/mypuzzle/) in your browser and confirm:
+
+- [ ] Grid renders with the correct shape and black cells
+- [ ] Clicking a cell highlights a word and shows the clue in the bar above
+- [ ] Clue panel lists all Across and Down clues
+- [ ] Typing a letter fills in the cell
+- [ ] The puzzle's color palette and fonts look distinctly themed
+- [ ] Gallery at [http://localhost:8765/](http://localhost:8765/) shows the new card
+
+---
+
+### Step 7 — Commit and push
+
+```bash
+git add mypuzzle/ index.html
+git commit -m "Add [Puzzle Title] puzzle (No. III)"
+git push origin main
+```
+
+---
+
+### Step 8 — Deploy to Cloudflare Pages
 
 ```bash
 npx wrangler pages deploy . --project-name=crosswords --branch=main
+```
+
+Wrangler prints a preview URL when done. The live site at `puzzles.ronexler.com` updates within a few seconds.
+
+```
+✨ Deployment complete! Take a peek over at https://xxxxxxxx.crosswords-6tb.pages.dev
 ```
 
 The new puzzle is live at `puzzles.ronexler.com/mypuzzle/`.
@@ -114,44 +259,47 @@ The new puzzle is live at `puzzles.ronexler.com/mypuzzle/`.
 
 ```
 crosswords/
-├── index.html            # Gallery page
-├── crossword.css         # Shared styles (CSS variable-driven)
-├── crossword.js          # CrosswordPuzzle engine
-├── theme-loader.js       # Theme fetch + CSS variable application
+├── index.html              # Gallery page — add new puzzle cards here
+├── crossword.css           # Shared styles (CSS variable-driven theming)
+├── crossword.js            # CrosswordPuzzle engine
+├── theme-loader.js         # Loads theme.json, applies CSS vars, inits puzzle
 ├── scripts/
-│   └── generate-theme.js # Anthropic API theme generator
+│   └── generate-theme.js   # Calls Anthropic API to generate theme.json
 ├── tests/
-│   └── validate.js       # Puzzle data validator
-├── mapping/
+│   └── validate.js         # Validates crossword.json before deploy
+├── mapping/                # Puzzle No. I
 │   ├── index.html
 │   ├── crossword.json
-│   └── theme.json        # Generated theme
-└── dogrescue/
+│   └── theme.json
+└── dogrescue/              # Puzzle No. II
     ├── index.html
     ├── crossword.json
-    └── theme.json        # Generated theme
+    └── theme.json
 ```
+
+---
 
 ## How theming works
 
-Each puzzle page:
-1. Fetches `theme.json` and `crossword.json` in parallel on load
-2. Applies theme colors as CSS custom properties on `:root`, overriding the defaults in `crossword.css`
-3. Injects the theme's Google Fonts `<link>` into `<head>`, overriding `--font-display` and `--font-body`
-4. Initialises the puzzle with the now-themed styles already in place
+When a puzzle page loads, `theme-loader.js`:
 
-If `theme.json` is missing or malformed, the puzzle falls back to the default vintage-paper aesthetic from `crossword.css`.
+1. Fetches `theme.json` and `crossword.json` simultaneously
+2. Overrides the 13 CSS custom properties on `:root` (colors) and `--font-display` / `--font-body` (typefaces)
+3. Injects the Google Fonts `<link>` into `<head>`
+4. Initialises `CrosswordPuzzle` — by this point all theme values are already in place
 
-## Running locally
+If `theme.json` fails to load (missing, malformed JSON, network error), the puzzle loads normally with the default vintage-paper palette from `crossword.css`.
 
-```bash
-npx http-server . -p 8765
-# open http://localhost:8765
-```
+---
 
-## Deployment target
+## Deployment reference
 
-- **Platform:** Cloudflare Pages
-- **Project:** `crosswords` (Pages project name)
-- **Live URL:** [puzzles.ronexler.com](https://puzzles.ronexler.com)
-- **Pages.dev URL:** [crosswords-6tb.pages.dev](https://crosswords-6tb.pages.dev)
+| What | Value |
+|------|-------|
+| Platform | Cloudflare Pages |
+| Pages project name | `crosswords` |
+| Production branch | `main` |
+| Live URL | [puzzles.ronexler.com](https://puzzles.ronexler.com) |
+| Pages.dev URL | [crosswords-6tb.pages.dev](https://crosswords-6tb.pages.dev) |
+| GitHub repo | [github.com/RonExler/crosswords](https://github.com/RonExler/crosswords) |
+| Deploy command | `npx wrangler pages deploy . --project-name=crosswords --branch=main` |
