@@ -1,0 +1,16 @@
+# Wrangler / Cloudflare
+.wrangler/
+
+# Claude Code session data
+.claude/
+
+# Source/scratch files that predate the project structure
+dog_rescue_crossword.json
+"mapping crossword.json"
+mapping\ crossword.json
+dogrescue.csv
+dogrescue15x15.csv
+dogrescue2.csv
+
+# macOS
+.DS_Store

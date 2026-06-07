@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapping &amp; Cartography — Crossword</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../crossword.css">
+</head>
+<body>
+  <div class="puzzle-page" id="app">
+    <header class="cw-header">
+      <a class="cw-back" href="/">← All Puzzles</a>
+      <div class="cw-header-text">
+        <div class="cw-title">Mapping &amp; Cartography</div>
+        <div class="cw-subtitle">No. I — Charts, coordinates &amp; the science of making maps</div>
+      </div>
+    </header>
+
+    <div class="cw-clue-bar">
+      <div class="cw-clue-bar-text"></div>
+    </div>
+
+    <div class="cw-layout">
+      <div class="cw-grid-section">
+        <div class="cw-grid-container"></div>
+        <div class="cw-controls">
+          <button class="cw-btn" id="btn-check">Check Answers</button>
+          <button class="cw-btn" id="btn-reveal">Reveal Letter</button>
+          <button class="cw-btn" id="btn-clear">Clear All</button>
+          <button class="cw-btn" id="btn-reveal-all">Reveal All</button>
+        </div>
+      </div>
+
+      <div class="cw-clue-panel">
+        <div class="cw-clue-group">
+          <h2 class="cw-clue-group-heading">Across</h2>
+          <ul class="cw-clues cw-clues-across"></ul>
+        </div>
+        <div class="cw-clue-group">
+          <h2 class="cw-clue-group-heading">Down</h2>
+          <ul class="cw-clues cw-clues-down"></ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="../crossword.js"></script>
+  <script src="../theme-loader.js"></script>
+  <script>
+    initPuzzle('app', {
+      check:     'btn-check',
+      reveal:    'btn-reveal',
+      clear:     'btn-clear',
+      revealAll: 'btn-reveal-all',
+    });
+  </script>
+</body>
+</html>

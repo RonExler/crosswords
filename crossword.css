@@ -1,0 +1,505 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap');
+
+:root {
+  --paper:        #f5edda;
+  --paper-mid:    #e8d9b8;
+  --paper-dark:   #d4c090;
+  --ink:          #1a0f00;
+  --ink-mid:      #4a3010;
+  --ink-light:    #8a6838;
+  --gold:         #b8860b;
+  --gold-light:   #e0a820;
+  --cell-bg:      #fdfaf2;
+  --border:       #7a5c30;
+  --hl-word:      #e4d090;
+  --hl-cell:      #c8960c;
+  --hl-cell-text: #fff8e8;
+  --correct:      #2d6a4f;
+  --wrong:        #8b1a1a;
+  --revealed:     #1a3a6b;
+  --font-display: 'Playfair Display SC', Georgia, serif;
+  --font-body:    'Libre Baskerville', Georgia, serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+/* ── Hidden input for mobile keyboard ───────────────────────── */
+.cw-hidden-input {
+  position: fixed;
+  left: 50%;
+  top: 0;
+  width: 2px;
+  height: 2px;
+  opacity: 0.01;
+  border: none;
+  padding: 0;
+  z-index: -1;
+  pointer-events: none;
+  font-size: 16px; /* prevents iOS Safari from zooming on focus */
+}
+
+/* ── Gallery / Index ─────────────────────────────────────────── */
+.gallery-page {
+  max-width: 820px;
+  margin: 0 auto;
+  padding: 3rem 1.5rem 4rem;
+}
+
+.gallery-header {
+  text-align: center;
+  padding-bottom: 2rem;
+  margin-bottom: 3rem;
+  border-bottom: 1px solid var(--paper-dark);
+  position: relative;
+}
+
+.gallery-header::after {
+  content: '✦';
+  position: absolute;
+  bottom: -0.6em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--paper);
+  padding: 0 0.5rem;
+  color: var(--gold);
+  font-size: 0.85rem;
+}
+
+.gallery-title {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  letter-spacing: 0.04em;
+  line-height: 1.15;
+  color: var(--ink);
+}
+
+.gallery-subtitle {
+  font-style: italic;
+  color: var(--ink-mid);
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+}
+
+.puzzle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.puzzle-card {
+  display: block;
+  text-decoration: none;
+  color: var(--ink);
+  background: var(--cell-bg);
+  border: 1px solid var(--border);
+  padding: 1.6rem 1.6rem 1.4rem;
+  position: relative;
+  transition: box-shadow 0.12s, transform 0.12s;
+  box-shadow: 3px 3px 0 var(--paper-dark);
+}
+
+.puzzle-card:hover {
+  box-shadow: 5px 5px 0 var(--paper-dark);
+  transform: translate(-1px, -1px);
+}
+
+.puzzle-card::before {
+  content: '';
+  position: absolute;
+  inset: 4px;
+  border: 1px solid var(--paper-mid);
+  pointer-events: none;
+}
+
+.puzzle-card-num {
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.15em;
+  color: var(--gold);
+  margin-bottom: 0.4rem;
+}
+
+.puzzle-card-title {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  letter-spacing: 0.03em;
+  line-height: 1.25;
+  margin-bottom: 0.5rem;
+}
+
+.puzzle-card-theme {
+  font-style: italic;
+  color: var(--ink-mid);
+  font-size: 0.875rem;
+  margin-bottom: 1rem;
+}
+
+.puzzle-card-cta {
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  font-family: var(--font-display);
+}
+
+/* ── Puzzle Page Layout ──────────────────────────────────────── */
+.puzzle-page {
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.cw-header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  flex-shrink: 0;
+}
+
+.cw-back {
+  color: var(--paper-mid);
+  text-decoration: none;
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-family: var(--font-display);
+}
+
+.cw-back:hover { color: var(--gold-light); }
+
+.cw-title {
+  font-family: var(--font-display);
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+  line-height: 1.2;
+  flex: 1;
+}
+
+.cw-subtitle {
+  font-style: italic;
+  color: var(--paper-dark);
+  font-size: 0.78rem;
+  margin-top: 0.15rem;
+  font-family: var(--font-body);
+  font-weight: 400;
+}
+
+/* Current clue bar */
+.cw-clue-bar {
+  background: var(--paper-mid);
+  border-bottom: 1px solid var(--paper-dark);
+  padding: 0.5rem 1.5rem;
+  min-height: 2.4rem;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.cw-clue-bar-text {
+  font-style: italic;
+  color: var(--ink-mid);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.cw-clue-bar-text strong {
+  font-style: normal;
+  color: var(--ink);
+  font-weight: 700;
+}
+
+.cw-dir-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2em;
+  cursor: pointer;
+  color: var(--gold);
+  border-bottom: 1px dotted var(--gold);
+  padding-bottom: 1px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.cw-dir-toggle:hover { color: var(--gold-light); }
+
+.cw-dir-arrow {
+  font-style: normal;
+  font-size: 0.9em;
+}
+
+.cw-dir-label {
+  color: var(--ink-mid);
+}
+
+/* Main content area */
+.cw-layout {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.25rem 1.5rem;
+  flex: 1;
+  overflow: hidden;
+  min-height: 0;
+}
+
+/* Grid section */
+.cw-grid-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  flex-shrink: 0;
+  overflow: auto;
+}
+
+.cw-grid-container {
+  outline: none;
+  cursor: default;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: pan-x pan-y;
+}
+
+/* The crossword grid */
+.cw-grid {
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 21), var(--cell-size, 38px));
+  grid-template-rows: repeat(var(--rows, 21), var(--cell-size, 38px));
+  border-top: 2px solid var(--border);
+  border-left: 2px solid var(--border);
+  line-height: 1;
+  width: max-content;
+}
+
+.cw-cell {
+  width: var(--cell-size, 38px);
+  height: var(--cell-size, 38px);
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.cw-cell.cw-black {
+  background: var(--ink);
+}
+
+.cw-cell.cw-white {
+  background: var(--cell-bg);
+  cursor: pointer;
+  touch-action: manipulation; /* removes 300ms tap delay on iOS */
+}
+
+.cw-cell.cw-white:hover {
+  background: #f0e4c8;
+}
+
+.cw-cell.cw-highlighted {
+  background: var(--hl-word) !important;
+}
+
+.cw-cell.cw-selected {
+  background: var(--hl-cell) !important;
+}
+
+.cw-cell.cw-selected .cw-letter {
+  color: var(--hl-cell-text) !important;
+}
+
+/* Correct / wrong / revealed states */
+.cw-cell.cw-correct  { background: #ddf0e4 !important; }
+.cw-cell.cw-wrong    { background: #f5d0d0 !important; }
+.cw-cell.cw-revealed { background: #d0dff5 !important; }
+
+.cw-cell.cw-highlighted.cw-correct  { background: #c8e8d4 !important; }
+.cw-cell.cw-highlighted.cw-wrong    { background: #f0b8b8 !important; }
+.cw-cell.cw-highlighted.cw-revealed { background: #b8cce8 !important; }
+
+.cw-cell.cw-selected.cw-correct,
+.cw-cell.cw-selected.cw-wrong,
+.cw-cell.cw-selected.cw-revealed {
+  background: var(--hl-cell) !important;
+}
+
+/* Cell number */
+.cw-num {
+  position: absolute;
+  top: 1px;
+  left: 2px;
+  font-size: calc(var(--cell-size, 38px) * 0.26);
+  font-family: var(--font-body);
+  color: var(--ink);
+  line-height: 1;
+  pointer-events: none;
+  min-font-size: 7px;
+}
+
+/* Cell letter */
+.cw-letter {
+  font-family: var(--font-display);
+  font-size: calc(var(--cell-size, 38px) * 0.54);
+  color: var(--ink);
+  text-transform: uppercase;
+  line-height: 1;
+  pointer-events: none;
+  font-weight: 700;
+}
+
+/* Controls */
+.cw-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.cw-btn {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--cell-bg);
+  border: 1px solid var(--border);
+  color: var(--ink);
+  cursor: pointer;
+  letter-spacing: 0.03em;
+  transition: background 0.1s, box-shadow 0.1s;
+  box-shadow: 1px 1px 0 var(--paper-dark);
+  white-space: nowrap;
+}
+
+.cw-btn:hover {
+  background: var(--paper-mid);
+  box-shadow: 2px 2px 0 var(--paper-dark);
+}
+
+.cw-btn:active {
+  box-shadow: none;
+  transform: translate(1px, 1px);
+}
+
+/* ── Clue Panel ──────────────────────────────────────────────── */
+.cw-clue-panel {
+  flex: 1;
+  min-width: 220px;
+  max-width: 340px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  padding-right: 4px;
+}
+
+.cw-clue-panel::-webkit-scrollbar {
+  width: 3px;
+}
+.cw-clue-panel::-webkit-scrollbar-track { background: var(--paper-mid); }
+.cw-clue-panel::-webkit-scrollbar-thumb { background: var(--paper-dark); }
+
+.cw-clue-group-heading {
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  letter-spacing: 0.14em;
+  color: var(--ink);
+  border-bottom: 1px solid var(--paper-dark);
+  padding-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
+}
+
+.cw-clues {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.cw-clues li {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  cursor: pointer;
+  color: var(--ink-mid);
+  border-left: 2px solid transparent;
+}
+
+.cw-clues li:hover {
+  background: var(--paper-mid);
+  color: var(--ink);
+}
+
+.cw-clues li.cw-clue-active {
+  background: var(--hl-word);
+  color: var(--ink);
+  border-left-color: var(--gold);
+}
+
+.cw-clue-num {
+  font-weight: 700;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-size: 0.78rem;
+  margin-right: 0.35em;
+}
+
+/* ── Mobile ──────────────────────────────────────────────────── */
+@media (max-width: 700px) {
+  .puzzle-page {
+    height: auto;
+    overflow: auto;
+  }
+
+  .cw-layout {
+    flex-direction: column;
+    overflow: visible;
+    padding: 0.75rem;
+    gap: 1rem;
+  }
+
+  .cw-grid-section {
+    overflow: visible;
+    width: 100%;
+  }
+
+  .cw-grid-container {
+    overflow-x: auto;
+  }
+
+  .cw-clue-panel {
+    max-width: none;
+    overflow-y: visible;
+    max-height: none;
+    width: 100%;
+    padding-bottom: 2rem;
+  }
+
+  .cw-clue-bar {
+    padding: 0.5rem 0.75rem;
+  }
+
+  .cw-header {
+    padding: 0.6rem 0.75rem;
+  }
+
+  .cw-title {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .gallery-title { font-size: 1.9rem; }
+}

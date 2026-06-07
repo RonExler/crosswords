@@ -1,0 +1,1132 @@
+{
+  "title": "",
+  "creator": "",
+  "puzzle": {
+    "grid": [
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "letter": "S",
+          "number": 20,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "L",
+          "number": 15,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "M",
+          "number": 16,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "I",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "L",
+          "number": 23,
+          "isBlack": false
+        },
+        {
+          "letter": "U",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "C",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "K",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "Y",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "letter": "A",
+          "number": 18,
+          "isBlack": false
+        },
+        {
+          "letter": "D",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "P",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "Z",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        {
+          "letter": "Y",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "Z",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "L",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "B",
+          "number": 25,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "I",
+          "number": 14,
+          "isBlack": false
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "R",
+          "number": 13,
+          "isBlack": false
+        },
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "B",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "I",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "S",
+          "number": 2,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "U",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "S",
+          "number": 4,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "D",
+          "number": 17,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "M",
+          "number": 1,
+          "isBlack": false
+        },
+        {
+          "letter": "I",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "C",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "C",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "H",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "I",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "P",
+          "number": 3,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "D",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "U",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "K",
+          "number": null,
+          "isBlack": false
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "H",
+          "number": 6,
+          "isBlack": false
+        },
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "D",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "L",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "L",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "R",
+          "number": 9,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "C",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "U",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "C",
+          "number": 22,
+          "isBlack": false
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "M",
+          "number": 21,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "D",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "B",
+          "number": 7,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "D",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "F",
+          "number": 5,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "V",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "K",
+          "number": 10,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "L",
+          "number": 19,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "G",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "D",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        }
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "letter": "N",
+          "number": 12,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "U",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "S",
+          "number": 24,
+          "isBlack": false
+        },
+        {
+          "letter": "P",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "Y",
+          "number": null,
+          "isBlack": false
+        },
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        {
+          "letter": "C",
+          "number": 11,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "L",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "L",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        {
+          "letter": "H",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null
+      ]
+    ],
+    "width": 21,
+    "height": 21,
+    "clues": {
+      "across": [
+        {
+          "number": 1,
+          "clue": "Tiny ID under the fur",
+          "word": "MICROCHIP"
+        },
+        {
+          "number": 5,
+          "clue": "The kind of home every dog deserves",
+          "word": "FOREVER"
+        },
+        {
+          "number": 6,
+          "clue": "The person on the other end of the leash",
+          "word": "HANDLER"
+        },
+        {
+          "number": 7,
+          "clue": "What rescue orgs urge you to skip",
+          "word": "BREEDER"
+        },
+        {
+          "number": 9,
+          "clue": "The whole point",
+          "word": "RESCUE"
+        },
+        {
+          "number": 10,
+          "clue": "A dog's temporary home at the shelter",
+          "word": "KENNEL"
+        },
+        {
+          "number": 11,
+          "clue": "Worn around the neck holds the tag",
+          "word": "COLLAR"
+        },
+        {
+          "number": 12,
+          "clue": "His version of the same surgery",
+          "word": "NEUTER"
+        },
+        {
+          "number": 13,
+          "clue": "Vaccination required by law in most states",
+          "word": "RABIES"
+        },
+        {
+          "number": 17,
+          "clue": "How supporters keep the lights on",
+          "word": "DONATE"
+        },
+        {
+          "number": 18,
+          "clue": "Give a dog its forever home",
+          "word": "ADOPT"
+        },
+        {
+          "number": 23,
+          "clue": "What every rescued dog is",
+          "word": "LUCKY"
+        },
+        {
+          "number": 24,
+          "clue": "Surgery that prevents unwanted litters",
+          "word": "SPAY"
+        }
+      ],
+      "down": [
+        {
+          "number": 2,
+          "clue": "When an owner can't keep their dog",
+          "word": "SURRENDER"
+        },
+        {
+          "number": 3,
+          "clue": "Opposite of a mixed-breed rescue",
+          "word": "PUREBRED"
+        },
+        {
+          "number": 4,
+          "clue": "Where dogs wait for their second chance",
+          "word": "SHELTER"
+        },
+        {
+          "number": 5,
+          "clue": "Temporary home that saves a life",
+          "word": "FOSTER"
+        },
+        {
+          "number": 14,
+          "clue": "First step when a dog enters rescue",
+          "word": "INTAKE"
+        },
+        {
+          "number": 15,
+          "clue": "A group of puppies born together",
+          "word": "LITTER"
+        },
+        {
+          "number": 16,
+          "clue": "Worn on the snout for safety",
+          "word": "MUZZLE"
+        },
+        {
+          "number": 19,
+          "clue": "The link between handler and dog",
+          "word": "LEASH"
+        },
+        {
+          "number": 20,
+          "clue": "A dog found wandering without an owner",
+          "word": "STRAY"
+        },
+        {
+          "number": 21,
+          "clue": "Skin disease common in strays",
+          "word": "MANGE"
+        },
+        {
+          "number": 22,
+          "clue": "Training tool that mimics a den",
+          "word": "CRATE"
+        },
+        {
+          "number": 25,
+          "clue": "What forms between dog and adopter",
+          "word": "BOND"
+        }
+      ]
+    }
+  }
+}

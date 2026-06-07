@@ -1,0 +1,23 @@
+{
+  "description": "Aged nautical charts rendered in indigo ink on yellowed parchment, with antique brass accents and period manuscript typography",
+  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=IM+Fell+English+SC&family=IM+Fell+English:ital@0;1&display=swap",
+  "colors": {
+    "paper":       "#f0e6c8",
+    "paperMid":    "#e2d4a4",
+    "paperDark":   "#c4a870",
+    "ink":         "#1c1040",
+    "inkMid":      "#3a2868",
+    "inkLight":    "#645090",
+    "accent":      "#9a7810",
+    "accentLight": "#c8a030",
+    "cellBg":      "#faf2de",
+    "border":      "#5a3c18",
+    "hlWord":      "#d0c45c",
+    "hlCell":      "#9a7810",
+    "hlCellText":  "#fff8e0"
+  },
+  "fonts": {
+    "display": "'IM Fell English SC', Georgia, serif",
+    "body":    "'IM Fell English', Georgia, serif"
+  }
+}
