@@ -65,6 +65,9 @@ A converter script (`scripts/import-puz.js`) that reads the standard Across Lite
 **Web-based puzzle editor**
 A local dev tool (single HTML file, no server needed) with a click-to-toggle grid builder, clue entry fields, and live validation feedback. Export to `crossword.json`.
 
+**Puzzmo-style structural validation**
+Extend `tests/validate.js` with a `--puzzmo` flag that enforces the Puzzmo constructor guidelines: white square count in the 60–110 range, all answers ≥ 3 letters, no unchecked squares, full grid connectivity, ≤ ~15 three-letter words, no duplicate answers or shared roots (ICE / ICE CREAM), and no partial-phrase fills (AT A, IN AT). Runs as part of the standard validation pipeline before theme generation.
+
 **Validate in `package.json` script**
 Add `"scripts": { "validate": "node tests/validate.js mapping dogrescue" }` so validation runs with `npm test`. Also run it as a pre-commit hook.
 
