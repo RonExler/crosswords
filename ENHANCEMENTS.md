@@ -60,7 +60,9 @@ Swipe left/right on the grid area to jump to the next/previous word without tapp
 A script (`scripts/generate-puzzle.js`) that takes a topic and word list and asks Claude to produce a valid `crossword.json` — grid layout, symmetry, clues, and answers — ready to validate and deploy. Eliminates manual grid construction entirely.
 
 **Import from .puz / .ipuz**
-A converter script (`scripts/import-puz.js`) that reads the standard Across Lite `.puz` binary format or `.ipuz` JSON and outputs `crossword.json`. Enables importing from Crossword Compiler, Crossfire, or other authoring tools.
+A converter script (`scripts/import-puz.js`) that reads the standard Across Lite `.puz` binary format or `.ipuz` JSON and outputs `crossword.json`. Enables importing from Crossword Compiler, CrossFire, or other authoring tools.
+
+**~~Import from .jpz~~** ✓ Done — `scripts/import-jpz.js` converts Ingrid exports to `crossword.json`. No dependencies.
 
 **Web-based puzzle editor**
 A local dev tool (single HTML file, no server needed) with a click-to-toggle grid builder, clue entry fields, and live validation feedback. Export to `crossword.json`.
