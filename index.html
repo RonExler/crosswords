@@ -3,32 +3,76 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Crossword Puzzles</title>
+  <title>Word Puzzles by Ron Exler</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display+SC:wght@400;700&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="crossword.css">
   <style>
     body { padding-top: 0; }
+
+    .gallery-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+      padding-bottom: 2rem;
+      margin-bottom: 3rem;
+      border-bottom: 1px solid var(--paper-dark);
+      position: relative;
+    }
+
+    .gallery-header::after {
+      content: '✦';
+      position: absolute;
+      bottom: -0.6em;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--paper);
+      padding: 0 0.5rem;
+      color: var(--gold);
+      font-size: 0.85rem;
+    }
+
+    .gallery-logo {
+      width: min(340px, 80vw);
+      height: auto;
+      display: block;
+    }
+
+    .gallery-byline {
+      font-family: var(--font-display);
+      font-size: 0.85rem;
+      letter-spacing: 0.18em;
+      color: var(--ink-mid);
+      text-transform: uppercase;
+    }
+
+    .gallery-subtitle {
+      font-style: italic;
+      color: var(--ink-mid);
+      font-size: 0.95rem;
+    }
   </style>
 </head>
 <body>
   <div class="gallery-page">
     <header class="gallery-header">
-      <h1 class="gallery-title">Crossword Puzzles</h1>
+      <img class="gallery-logo" src="logo.png" alt="Word Puzzles by Ron Exler">
+      <p class="gallery-byline">by Ron Exler</p>
       <p class="gallery-subtitle">A small collection of themed word puzzles</p>
     </header>
 
     <div class="puzzle-grid">
       <a class="puzzle-card" href="/mapping/">
-        <div class="puzzle-card-num">No. I</div>
+        <div class="puzzle-card-num">1</div>
         <h2 class="puzzle-card-title">Mapping &amp; Cartography</h2>
         <p class="puzzle-card-theme">Charts, coordinates, and the science of making maps</p>
         <span class="puzzle-card-cta">Solve →</span>
       </a>
 
       <a class="puzzle-card" href="/dogrescue/">
-        <div class="puzzle-card-num">No. II</div>
+        <div class="puzzle-card-num">2</div>
         <h2 class="puzzle-card-title">Dog Rescue</h2>
         <p class="puzzle-card-theme">Shelters, fosters, and the language of second chances</p>
         <span class="puzzle-card-cta">Solve →</span>
