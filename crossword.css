@@ -190,8 +190,10 @@ body {
 }
 
 .cw-logo {
-  height: 24px;
+  height: 28px;
+  max-height: 28px;
   width: auto;
+  max-width: 80px;
   display: block;
   opacity: 0.92;
   transition: opacity 0.15s;
