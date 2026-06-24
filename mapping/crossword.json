@@ -1,78 +1,71 @@
 {
-  "title": "",
-  "creator": "",
   "puzzle": {
+    "title": "Cartography",
+    "width": 15,
+    "height": 15,
     "grid": [
       [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
+        {
+          "letter": "A",
+          "number": 1,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": 2,
+          "isBlack": false
+        },
+        {
+          "letter": "C",
+          "number": 3,
+          "isBlack": false
+        },
         null,
         null,
         {
-          "letter": "F",
-          "number": 13,
+          "letter": "H",
+          "number": 4,
           "isBlack": false
         },
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         {
-          "letter": "O",
+          "letter": "S",
+          "number": 5,
+          "isBlack": false
+        },
+        {
+          "letter": "C",
           "number": null,
           "isBlack": false
         },
-        null,
-        null,
-        null,
-        null,
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
         {
           "letter": "L",
-          "number": 9,
+          "number": 6,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        null
+      ],
+      [
+        {
+          "letter": "S",
+          "number": 7,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
           "isBlack": false
         },
         {
@@ -85,19 +78,38 @@
           "number": null,
           "isBlack": false
         },
+        null,
+        {
+          "letter": "W",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
         {
           "letter": "G",
-          "number": 7,
+          "number": 8,
           "isBlack": false
         },
+        null,
+        null,
+        null,
         {
-          "letter": "I",
+          "letter": "E",
           "number": null,
           "isBlack": false
         },
+        null,
         {
-          "letter": "T",
-          "number": null,
+          "letter": "M",
+          "number": 9,
+          "isBlack": false
+        }
+      ],
+      [
+        {
+          "letter": "S",
+          "number": 10,
           "isBlack": false
         },
         {
@@ -106,12 +118,63 @@
           "isBlack": false
         },
         {
-          "letter": "D",
+          "letter": "B",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "H",
+          "number": 11,
+          "isBlack": false
+        },
+        {
+          "letter": "Y",
           "number": null,
           "isBlack": false
         },
         {
-          "letter": "E",
+          "letter": "D",
+          "number": 12,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "G",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "P",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "H",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "Y",
           "number": null,
           "isBlack": false
         }
@@ -119,7 +182,17 @@
       [
         null,
         {
-          "letter": "B",
+          "letter": "S",
+          "number": 13,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "H",
           "number": 14,
           "isBlack": false
         },
@@ -128,119 +201,12 @@
           "number": null,
           "isBlack": false
         },
-        {
-          "letter": "U",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "N",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "D",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "Y",
-          "number": null,
-          "isBlack": false
-        },
         null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "E",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "E",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "S",
-          "number": 12,
-          "isBlack": false
-        },
-        {
-          "letter": "U",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "V",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "E",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "Y",
-          "number": null,
-          "isBlack": false
-        },
         {
           "letter": "O",
           "number": null,
           "isBlack": false
         },
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
         null,
         {
           "letter": "S",
@@ -250,32 +216,28 @@
         null,
         null,
         null,
-        null,
-        null,
-        null,
-        null,
         {
-          "letter": "G",
+          "letter": "R",
           "number": null,
           "isBlack": false
         },
         null,
-        null,
-        null,
-        null,
-        null
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        }
       ],
       [
         null,
-        null,
         {
           "letter": "E",
-          "number": 8,
+          "number": 15,
           "isBlack": false
         },
         {
           "letter": "L",
-          "number": 11,
+          "number": null,
           "isBlack": false
         },
         {
@@ -290,590 +252,239 @@
         },
         {
           "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "T",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "I",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "N",
-          "number": 6,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "A",
-          "number": 20,
-          "isBlack": false
-        },
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "C",
-          "number": 10,
-          "isBlack": false
-        },
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "D",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "S",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "T",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "L",
-          "number": 18,
-          "isBlack": false
-        }
-      ],
-      [
-        null,
-        null,
-        null,
-        {
-          "letter": "T",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "Y",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "V",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "P",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "L",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "E",
-          "number": null,
-          "isBlack": false
-        }
-      ],
-      [
-        null,
-        null,
-        {
-          "letter": "G",
-          "number": 24,
-          "isBlack": false
-        },
-        {
-          "letter": "I",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "S",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "I",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "B",
-          "number": 3,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "H",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "G",
-          "number": null,
-          "isBlack": false
-        }
-      ],
-      [
-        null,
-        null,
-        null,
-        {
-          "letter": "T",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "C",
-          "number": 1,
-          "isBlack": false
-        },
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "T",
-          "number": 5,
-          "isBlack": false
-        },
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "G",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "P",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "H",
-          "number": 4,
-          "isBlack": false
-        },
-        {
-          "letter": "Y",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "S",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "E",
-          "number": null,
-          "isBlack": false
-        }
-      ],
-      [
-        null,
-        null,
-        null,
-        {
-          "letter": "U",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "T",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "Y",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "N",
-          "number": null,
-          "isBlack": false
-        }
-      ],
-      [
-        null,
-        {
-          "letter": "S",
-          "number": 21,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "D",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "P",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "T",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "H",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "D",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "D",
-          "number": null,
-          "isBlack": false
-        }
-      ],
-      [
-        null,
-        {
-          "letter": "C",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "E",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "I",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "Y",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "D",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "G",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "M",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        {
-          "letter": "L",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "I",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "N",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "E",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "G",
-          "number": 22,
-          "isBlack": false
-        },
-        {
-          "letter": "L",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "B",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "E",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null
-      ],
-      [
-        {
-          "letter": "S",
           "number": 16,
           "isBlack": false
         },
         {
-          "letter": "E",
+          "letter": "T",
           "number": null,
           "isBlack": false
         },
+        {
+          "letter": "I",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "H",
+          "number": null,
+          "isBlack": false
+        }
+      ],
+      [
+        null,
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        },
+        null,
         {
           "letter": "X",
           "number": null,
           "isBlack": false
         },
+        null,
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "U",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "T",
+          "number": 17,
+          "isBlack": false
+        },
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "K",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        }
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "C",
+          "number": 18,
+          "isBlack": false
+        },
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
         {
           "letter": "T",
           "number": null,
           "isBlack": false
         },
         {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "G",
+          "number": 19,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        {
           "letter": "A",
+          "number": 20,
+          "isBlack": false
+        },
+        {
+          "letter": "P",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "H",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "Y",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        {
+          "letter": "G",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "P",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "X",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        {
+          "letter": "H",
+          "number": 21,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "M",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "S",
+          "number": 22,
+          "isBlack": false
+        },
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "P",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "I",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
           "number": null,
           "isBlack": false
         },
@@ -883,99 +494,78 @@
           "isBlack": false
         },
         {
-          "letter": "T",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "T",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        {
-          "letter": "R",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        {
-          "letter": "P",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        {
-          "letter": "R",
-          "number": 19,
-          "isBlack": false
-        },
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "A",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "D",
-          "number": null,
-          "isBlack": false
-        },
-        {
           "letter": "S",
           "number": null,
           "isBlack": false
         },
         null,
-        null,
-        null,
         null
       ],
       [
-        null,
-        null,
         {
-          "letter": "P",
+          "letter": "T",
           "number": 23,
           "isBlack": false
         },
         {
-          "letter": "L",
+          "letter": "H",
           "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "I",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "O",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "E",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "B",
+          "number": 24,
+          "isBlack": false
+        },
+        null
+      ],
+      [
+        {
+          "letter": "H",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "D",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "B",
+          "number": 25,
           "isBlack": false
         },
         {
@@ -988,10 +578,52 @@
           "number": null,
           "isBlack": false
         },
-        null,
-        null,
         {
           "letter": "H",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "Y",
+          "number": 26,
+          "isBlack": false
+        },
+        {
+          "letter": "M",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": 27,
+          "isBlack": false
+        },
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "R",
+          "number": 28,
+          "isBlack": false
+        },
+        {
+          "letter": "Y",
+          "number": null,
+          "isBlack": false
+        },
+        null
+      ],
+      [
+        {
+          "letter": "I",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "E",
           "number": null,
           "isBlack": false
         },
@@ -1005,60 +637,37 @@
         },
         null,
         {
-          "letter": "P",
-          "number": null,
-          "isBlack": false
-        },
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
-      ],
-      [
-        null,
-        null,
-        null,
-        null,
-        null,
-        {
           "letter": "E",
           "number": null,
           "isBlack": false
         },
         null,
-        null,
         {
-          "letter": "Y",
+          "letter": "R",
+          "number": 29,
+          "isBlack": false
+        },
+        {
+          "letter": "S",
           "number": null,
           "isBlack": false
         },
-        null,
-        null,
-        null,
         {
-          "letter": "C",
+          "letter": "V",
           "number": null,
           "isBlack": false
         },
-        null,
         {
-          "letter": "H",
+          "letter": "P",
           "number": null,
           "isBlack": false
         },
-        null,
-        null,
-        null,
-        null,
-        null,
         null
       ],
       [
         {
           "letter": "C",
-          "number": 15,
+          "number": 30,
           "isBlack": false
         },
         {
@@ -1067,12 +676,130 @@
           "isBlack": false
         },
         {
-          "letter": "M",
+          "letter": "O",
           "number": null,
           "isBlack": false
         },
         {
-          "letter": "P",
+          "letter": "R",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "D",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "I",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "E",
+          "number": 31,
+          "isBlack": false
+        },
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "I",
+          "number": 32,
+          "isBlack": false
+        },
+        {
+          "letter": "A",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "M",
+          "number": 33,
+          "isBlack": false
+        }
+      ],
+      [
+        {
+          "letter": "K",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "U",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        null,
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        null,
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        },
+        null,
+        {
+          "letter": "I",
+          "number": 34,
+          "isBlack": false
+        },
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "S",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        }
+      ],
+      [
+        null,
+        {
+          "letter": "A",
+          "number": 35,
+          "isBlack": false
+        },
+        {
+          "letter": "T",
+          "number": null,
+          "isBlack": false
+        },
+        {
+          "letter": "L",
           "number": null,
           "isBlack": false
         },
@@ -1086,45 +813,19 @@
           "number": null,
           "isBlack": false
         },
+        null,
+        null,
+        null,
         {
-          "letter": "S",
+          "letter": "A",
           "number": null,
           "isBlack": false
         },
         null,
         null,
-        null,
-        null,
-        null,
-        null,
         {
-          "letter": "S",
-          "number": 17,
-          "isBlack": false
-        },
-        {
-          "letter": "Y",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "M",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "B",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "O",
-          "number": null,
-          "isBlack": false
-        },
-        {
-          "letter": "L",
-          "number": null,
+          "letter": "G",
+          "number": 36,
           "isBlack": false
         },
         {
@@ -1132,134 +833,221 @@
           "number": null,
           "isBlack": false
         },
-        null
+        {
+          "letter": "N",
+          "number": null,
+          "isBlack": false
+        }
       ]
     ],
-    "width": 21,
-    "height": 21,
     "clues": {
       "across": [
         {
           "number": 1,
+          "clue": "A leading GIS system's early name - ___ INFO",
+          "word": "ARC"
+        },
+        {
+          "number": 5,
+          "clue": "The ratio between map distance and real-world distance",
+          "word": "SCALE"
+        },
+        {
+          "number": 7,
+          "clue": "A procrastinator says they will do it _____",
+          "word": "SOON"
+        },
+        {
+          "number": 10,
+          "clue": "Short for the vessel that helps map the ocean bottom",
+          "word": "SUB"
+        },
+        {
+          "number": 11,
+          "clue": "The mapping of bodies of water",
+          "word": "HYDROGRAPHY"
+        },
+        {
+          "number": 13,
+          "clue": "John Snow used maps to trace the source of cholera in this London neighborhood",
+          "word": "SOHO"
+        },
+        {
+          "number": 15,
+          "clue": "Vertical distances of a point above or below a reference surface or datum",
+          "word": "ELEVATIONS"
+        },
+        {
+          "number": 17,
+          "clue": "Judgmental sounds",
+          "word": "TSKS"
+        },
+        {
+          "number": 18,
           "clue": "The art and science of making maps",
           "word": "CARTOGRAPHY"
         },
         {
-          "number": 8,
-          "clue": "How high above sea level you are",
-          "word": "ELEVATION"
-        },
-        {
-          "number": 9,
-          "clue": "Vertical lines that meet at the poles",
-          "word": "LONGITUDE"
-        },
-        {
-          "number": 10,
-          "clue": "Type of map showing property boundaries and ownership",
-          "word": "CADASTRAL"
-        },
-        {
-          "number": 12,
-          "clue": "Professional who measures land boundaries",
-          "word": "SURVEYOR"
-        },
-        {
-          "number": 14,
-          "clue": "A line dividing one territory from another",
-          "word": "BOUNDARY"
-        },
-        {
-          "number": 15,
-          "clue": "It always points you in the right direction",
-          "word": "COMPASS"
-        },
-        {
-          "number": 16,
-          "clue": "Old-school navigational instrument using celestial angles",
-          "word": "SEXTANT"
-        },
-        {
-          "number": 17,
-          "clue": "The visual shorthand found in a map's legend",
-          "word": "SYMBOLS"
-        },
-        {
-          "number": 19,
-          "clue": "Lines on a map you can actually drive on",
-          "word": "ROADS"
-        },
-        {
-          "number": 22,
-          "clue": "The only truly accurate map of Earth",
-          "word": "GLOBE"
+          "number": 21,
+          "clue": "Human kind (2 words)",
+          "word": "HOMOSAPIENS"
         },
         {
           "number": 23,
-          "clue": "Legal map showing land subdivision and lot lines",
-          "word": "PLAT"
+          "clue": "Some map lines are this, others are 23 down",
+          "word": "THIN"
         },
         {
-          "number": 24,
-          "clue": "Computer system for capturing and analyzing spatial data (abbr.)",
-          "word": "GIS"
+          "number": 25,
+          "clue": "Underwater depths measurement",
+          "word": "BATHYMETRY"
+        },
+        {
+          "number": 29,
+          "clue": "An online event tool for tracking this should include location info",
+          "word": "RSVP"
+        },
+        {
+          "number": 30,
+          "clue": "Latitude and longitude pair that pins a point on Earth",
+          "word": "COORDINATES"
+        },
+        {
+          "number": 32,
+          "clue": "\"___ here\": what a self-centered map might say",
+          "word": "IAM"
+        },
+        {
+          "number": 34,
+          "clue": "Pan American ___ of Geography and History",
+          "word": "INST"
+        },
+        {
+          "number": 35,
+          "clue": "A bound collection of maps",
+          "word": "ATLAS"
+        },
+        {
+          "number": 36,
+          "clue": "Cable home of game-show reruns",
+          "word": "GSN"
         }
       ],
       "down": [
         {
           "number": 1,
-          "clue": "Latitude and longitude pair that pins a point on Earth",
-          "word": "COORDINATES"
+          "clue": "Donkey",
+          "word": "ASS"
+        },
+        {
+          "number": 2,
+          "clue": "Wakes up",
+          "word": "ROUSES"
         },
         {
           "number": 3,
-          "clue": "Type of map showing underwater depths",
-          "word": "BATHYMETRIC"
+          "clue": "FORTRAN, not this business coding language, was widely used to develop early automated mapping systems",
+          "word": "COBOL"
         },
         {
           "number": 4,
-          "clue": "The mapping of bodies of water",
-          "word": "HYDROGRAPHY"
-        },
-        {
-          "number": 5,
-          "clue": "The lay of the land hills and all",
-          "word": "TOPOGRAPHY"
+          "clue": "Map line marked with a shield: Abbr.",
+          "word": "HWY"
         },
         {
           "number": 6,
-          "clue": "The art of finding your way from here to there",
-          "word": "NAVIGATION"
+          "clue": "Tropical disease whose occurrence is influenced by geographic and socioeconomic factors",
+          "word": "LEPROSY"
         },
         {
-          "number": 7,
-          "clue": "The study of Earth's features and places",
-          "word": "GEOGRAPHY"
+          "number": 8,
+          "clue": "To turn bad or unpleasant",
+          "word": "GOSOUR"
+        },
+        {
+          "number": 9,
+          "clue": "\"The Sahara is the largest desert\" and \"The equator is the hottest place on Earth\"",
+          "word": "MYTHS"
         },
         {
           "number": 11,
-          "clue": "Horizontal lines that measure distance from the equator",
-          "word": "LATITUDE"
+          "clue": "A special lane that could speed your commute, with some help",
+          "word": "HOV"
         },
         {
-          "number": 13,
-          "clue": "Land management field that relies heavily on aerial maps",
-          "word": "FORESTRY"
+          "number": 12,
+          "clue": "A map symbol for a point of interest",
+          "word": "DOT"
         },
         {
-          "number": 18,
-          "clue": "The map's decoder — what all those symbols mean",
-          "word": "LEGEND"
+          "number": 14,
+          "clue": "Cell shape in some spatial grids",
+          "word": "HEXAGON"
+        },
+        {
+          "number": 16,
+          "clue": "___-geodetic: relating to position-fixing by the stars",
+          "word": "ASTRO"
+        },
+        {
+          "number": 17,
+          "clue": "Brooklyn ballers",
+          "word": "THENETS"
+        },
+        {
+          "number": 19,
+          "clue": "4.0 is one to be proud of",
+          "word": "GPA"
         },
         {
           "number": 20,
-          "clue": "A bound collection of maps",
-          "word": "ATLAS"
+          "clue": "One of these in map design is cartographers must simplify complex information to make maps understandable",
+          "word": "AXIOM"
         },
         {
           "number": 21,
-          "clue": "The ratio between map distance and real-world distance",
-          "word": "SCALE"
+          "clue": "Do not show this secret place on a map",
+          "word": "HIDEOUT"
+        },
+        {
+          "number": 22,
+          "clue": "Fabrics that originated in China and spread along the Silk Road",
+          "word": "SATINS"
+        },
+        {
+          "number": 23,
+          "clue": "See 23 across",
+          "word": "THICK"
+        },
+        {
+          "number": 24,
+          "clue": "A road solution for when there's too much through traffic going through",
+          "word": "BYPASS"
+        },
+        {
+          "number": 26,
+          "clue": "Is it ready? Not ____",
+          "word": "YET"
+        },
+        {
+          "number": 27,
+          "clue": "Trauma centers",
+          "word": "ERS"
+        },
+        {
+          "number": 28,
+          "clue": "Involves rig glamping and lots of map reading",
+          "word": "RVING"
+        },
+        {
+          "number": 31,
+          "clue": "Along with suggested routes, the navigation system typically give you this for your destination",
+          "word": "ETA"
+        },
+        {
+          "number": 33,
+          "clue": "The highest 15 across on a map might be one of these (Abbr.)",
+          "word": "MTN"
         }
       ]
     }

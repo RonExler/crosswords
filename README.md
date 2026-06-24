@@ -1,6 +1,6 @@
 # Crossword Puzzles
 
-Interactive crossword puzzles at [puzzles.ronexler.com](https://puzzles.ronexler.com), hosted on Cloudflare Pages. Each puzzle has a dynamically generated visual theme derived from its topic via the Anthropic API.
+Interactive crossword puzzles at [puzzles.ronexler.com](https://puzzles.ronexler.com), hosted on Cloudflare Pages. Each puzzle has a dynamically generated visual theme derived from its topic.
 
 ---
 
@@ -8,13 +8,11 @@ Interactive crossword puzzles at [puzzles.ronexler.com](https://puzzles.ronexler
 
 ### Prerequisites
 
-Make sure you have the following before starting:
-
 | Tool | Check | Install |
 |------|-------|---------|
 | Node.js 18+ | `node --version` | [nodejs.org](https://nodejs.org) |
 | Wrangler CLI | `npx wrangler --version` | included via npx |
-| Anthropic API key | — | [console.anthropic.com](https://console.anthropic.com) |
+| Ingrid | — | crossword construction app used to build puzzles |
 | Cloudflare account | — | already configured |
 | Git | `git --version` | included on macOS |
 
@@ -27,86 +25,9 @@ cd crosswords
 
 ---
 
-### Step 1 — Create the puzzle data
+### Step 1 — Build the puzzle in Ingrid
 
-Each puzzle is a `crossword.json` file. The easiest way to produce one is to ask Claude with a prompt like:
-
-> "Generate a 21×21 crossword puzzle about [topic]. Return it as JSON matching this schema: [paste the schema below]."
-
-The schema is:
-
-```json
-{
-  "puzzle": {
-    "title": "Puzzle Title",
-    "width": 21,
-    "height": 21,
-    "grid": [
-      [ ...row 0: 21 cells... ],
-      [ ...row 1: 21 cells... ],
-      ...21 rows total...
-    ],
-    "clues": {
-      "across": [
-        { "number": 1, "clue": "Clue text here", "word": "ANSWER" }
-      ],
-      "down": [
-        { "number": 1, "clue": "Clue text here", "word": "ANSWER" }
-      ]
-    }
-  }
-}
-```
-
-**Grid cell format** — every cell in the `grid` array is one of:
-
-```json
-null
-```
-A black (blocked) square.
-
-```json
-{ "letter": "A", "number": 1, "isBlack": false }
-```
-A white square. Fields:
-- `letter` — the correct answer letter, uppercase
-- `number` — the cell's printed number (only present when this cell starts an across or down word; omit or set `null` otherwise)
-- `isBlack` — always `false` for white cells (or omit entirely)
-
-**Minimal example** — a 5×5 grid spelling ONE across and ONE down from cell #1:
-
-```
-■ ■ ■ ■ ■
-■ O N E ■
-■ ■ ■ ■ ■
-■ ■ ■ ■ ■
-■ ■ ■ ■ ■
-```
-
-```json
-{
-  "puzzle": {
-    "title": "Example",
-    "width": 5,
-    "height": 5,
-    "grid": [
-      [null, null, null, null, null],
-      [null, {"letter":"O","number":1,"isBlack":false}, {"letter":"N","number":null,"isBlack":false}, {"letter":"E","number":null,"isBlack":false}, null],
-      [null, null, null, null, null],
-      [null, null, null, null, null],
-      [null, null, null, null, null]
-    ],
-    "clues": {
-      "across": [
-        { "number": 1, "clue": "Not zero", "word": "ONE" }
-      ],
-      "down": []
-    }
-  }
-}
-```
-
-Standard crossword grids are 15×15 or 21×21 with rotational symmetry. The engine works with any rectangular size.
+Create and fill your puzzle grid in Ingrid. When done, export it as a `.jpz` file.
 
 ---
 
@@ -132,27 +53,41 @@ Edit `mypuzzle/index.html` — change exactly three things:
 
 Everything else (script tags, button IDs, layout) stays identical.
 
-Place your `crossword.json` in the folder:
+---
 
+### Step 3 — Import the .jpz file
+
+```bash
+node scripts/import-jpz.js "mypuzzle/My Puzzle.jpz" mypuzzle
 ```
-mypuzzle/
-├── index.html       ← copied and edited above
-└── crossword.json   ← your puzzle data
+
+This writes `mypuzzle/crossword.json` from the Ingrid export. Safe to re-run (overwrites).
+
+Example output:
+```
+✓ Wrote mypuzzle/crossword.json
+  Grid:  15×15
+  Title: "My Puzzle"
+  Clues: 20 across, 25 down
 ```
 
 ---
 
-### Step 3 — Validate the puzzle data
+### Step 4 — Validate the puzzle data
 
 ```bash
 node tests/validate.js mypuzzle
 ```
 
 **What it checks:**
+- Valid JSON and required structure (`puzzle`, `grid`, `clues.across`, `clues.down`)
+- Every cell letter is a single A–Z character
+- No duplicate cell numbers in the grid
+- Every clue has a number, clue text, and answer word
 - Every clue number references a real numbered cell in the grid
 - Every clue `word` matches the letters the grid traces in that direction from that cell
+- Every numbered cell is referenced by at least one clue
 - No duplicate clue numbers within a direction
-- No cells that have a number but no corresponding clue
 - No words shorter than 2 letters
 
 **Example output when all is well:**
@@ -166,36 +101,30 @@ node tests/validate.js mypuzzle
 [mypuzzle] ERROR: across clue #5: word "ANSWER" but grid traces "ANSWR"
 ```
 
-Fix all errors before continuing. Common mistakes:
-- Clue number doesn't match any cell's `number` field → check you copied the number correctly from the grid
-- Word mismatch → the grid letters don't spell the word you wrote in the clue
+Fix all errors before continuing.
 
 ---
 
-### Step 4 — Generate the theme
+### Step 5 — Generate the theme
 
 ```bash
 ANTHROPIC_API_KEY=sk-ant-... node scripts/generate-theme.js mypuzzle
 ```
 
-This calls Claude with the puzzle title and full word list and writes `mypuzzle/theme.json`. The theme defines:
-
-- A color palette (background, ink, accents, highlights, grid lines)
-- A Google Fonts URL for two typefaces (display + body)
-- A one-sentence aesthetic description
+This calls Claude with the puzzle title and word list and writes `mypuzzle/theme.json`. The theme defines a color palette, Google Fonts URL, and aesthetic description.
 
 Example output:
 ```
 [mypuzzle] Wrote theme.json — Starlit observatory blues with silver-white ink and cosmic-amber accents
 ```
 
-**Tweaking the theme** — open `mypuzzle/theme.json` and edit any color or font by hand before deploying. All colors are 6-digit hex. Fonts must be available on [Google Fonts](https://fonts.google.com).
+**Tweaking the theme** — edit `mypuzzle/theme.json` by hand before deploying. All colors are 6-digit hex. Fonts must be on [Google Fonts](https://fonts.google.com).
 
-If you don't have an API key yet, you can skip this step and write `theme.json` by hand using the format from `mapping/theme.json` as a template. The puzzle will fall back to the default vintage-paper style if `theme.json` is missing.
+You can also skip this step and write `theme.json` by hand using `mapping/theme.json` as a template. The puzzle falls back to the default vintage-paper style if `theme.json` is missing.
 
 ---
 
-### Step 5 — Add the puzzle to the gallery
+### Step 6 — Add the puzzle to the gallery
 
 Edit `index.html` at the root of the project. Find the `<div class="puzzle-grid">` block and add a new card:
 
@@ -212,7 +141,7 @@ Increment the number (`No. III`, `No. IV`, etc.) to match the new puzzle's posit
 
 ---
 
-### Step 6 — Test locally
+### Step 7 — Test locally
 
 ```bash
 npx http-server . -p 8765
@@ -229,7 +158,7 @@ Open [http://localhost:8765/mypuzzle/](http://localhost:8765/mypuzzle/) in your 
 
 ---
 
-### Step 7 — Commit and push
+### Step 8 — Commit and push
 
 ```bash
 git add mypuzzle/ index.html
@@ -239,7 +168,7 @@ git push origin main
 
 ---
 
-### Step 8 — Deploy to Cloudflare Pages
+### Step 9 — Deploy to Cloudflare Pages
 
 ```bash
 npx wrangler pages deploy . --project-name=crosswords --branch=main
@@ -255,6 +184,39 @@ The new puzzle is live at `puzzles.ronexler.com/mypuzzle/`.
 
 ---
 
+## Replacing an existing puzzle
+
+To update a puzzle in place (e.g. after revising it in Ingrid):
+
+```bash
+node scripts/import-jpz.js "mypuzzle/Updated Title.jpz" mypuzzle
+node tests/validate.js mypuzzle
+npx wrangler pages deploy . --project-name=crosswords --branch=main
+```
+
+No changes to `index.html` or `theme.json` needed unless the title changed.
+
+---
+
+## Restarting a Claude Code session
+
+Open a terminal in the project directory and launch Claude Code:
+
+```bash
+cd ~/Projects/crosswords
+claude
+```
+
+Claude Code automatically loads project memory, so context about this project (puzzle workflow, preferences, past decisions) carries over between sessions. To orient Claude at the start of a session, a prompt like this works well:
+
+> "I want to add a new puzzle / replace the [name] puzzle / work on [specific task]. Here's what I have: ..."
+
+You can also reference this README directly:
+
+> "Read the README and then help me add a new puzzle."
+
+---
+
 ## Project structure
 
 ```
@@ -264,14 +226,15 @@ crosswords/
 ├── crossword.js            # CrosswordPuzzle engine
 ├── theme-loader.js         # Loads theme.json, applies CSS vars, inits puzzle
 ├── scripts/
+│   ├── import-jpz.js       # Converts Ingrid .jpz export → crossword.json
 │   └── generate-theme.js   # Calls Anthropic API to generate theme.json
 ├── tests/
 │   └── validate.js         # Validates crossword.json before deploy
-├── mapping/                # Puzzle No. I
+├── mapping/                # Puzzle No. I — Cartography
 │   ├── index.html
 │   ├── crossword.json
 │   └── theme.json
-└── dogrescue/              # Puzzle No. II
+└── dogrescue/              # Puzzle No. II — Dog Rescue
     ├── index.html
     ├── crossword.json
     └── theme.json

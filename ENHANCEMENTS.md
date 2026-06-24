@@ -52,12 +52,27 @@ Add a `prefers-color-scheme: dark` variant to `crossword.css` with inverted-but-
 **Swipe navigation on mobile**
 Swipe left/right on the grid area to jump to the next/previous word without tapping the clue panel.
 
+**User comments
+Allow short comments about the puzzles, displayed below the puzzle with user initials.
+
+**Difficulty rating (not yet implemented)
+Add automated difficulty estimation to the puzzle build pipeline. Since there's no solver history for a brand-new puzzle, use feature-based estimation rather than performance-based rating.
+Metrics to calculate (rule-based, no API call needed):
+Average and longest answer length
+Grid density (white squares ÷ total squares) and black square ratio
+Proportion of 3-letter answers
+Proportion of answers that are proper nouns or abbreviations
+Vocabulary frequency — flag answers that are uncommon in everyday English (use a standard word-frequency list or dictionary check)
+Clue style assessment (one Anthropic API call per puzzle, at build time): Send the full clue list and ask the model to rate, on a 1–5 scale: how many clues use straight definitions vs. wordplay/puns/trivia, and an overall "gentleness" rating per the project's own clue guidelines (relatively easy, helpful toward the solver, not deliberately obscure).
+Combine into a single score: Weight the rule-based grid/vocabulary metrics and the clue-style score into one overall rating. Map it to a simple label: Easy / Medium / Hard, or a 1–5 scale — match whichever style fits the existing theme.json convention.
+Output: Store the result in each puzzle's theme.json (or a new difficulty.json alongside it) so it's computed once at build time, not on every page load. Display the rating on the gallery index page next to each puzzle's title and theme.
+Documentation: Update README.md to note that difficulty is computed automatically when a new puzzle is added, as part of the same build step that runs the theme generator.
+
+
+
 ---
 
 ## Puzzle authoring & admin
-
-**Claude-powered puzzle generation**
-A script (`scripts/generate-puzzle.js`) that takes a topic and word list and asks Claude to produce a valid `crossword.json` — grid layout, symmetry, clues, and answers — ready to validate and deploy. Eliminates manual grid construction entirely.
 
 **Import from .puz / .ipuz**
 A converter script (`scripts/import-puz.js`) that reads the standard Across Lite `.puz` binary format or `.ipuz` JSON and outputs `crossword.json`. Enables importing from Crossword Compiler, CrossFire, or other authoring tools.
@@ -75,6 +90,12 @@ Add `"scripts": { "validate": "node tests/validate.js mapping dogrescue" }` so v
 
 **Theme preview / regeneration**
 Add a `--preview` flag to `generate-theme.js` that prints the color palette to the terminal as colored blocks (using ANSI escape codes) so you can evaluate a theme before writing the file.
+
+**Author notes
+Add section adjacent to or as popup for notes from the author about the puzzle.
+
+**Puzzle image
+Add ability for admin to insert an image on the puzzle page entry block. That image also shows on the puzzle page. Image can be entered initially or later.
 
 ---
 
