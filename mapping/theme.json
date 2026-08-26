@@ -1,23 +1,23 @@
 {
-  "description": "Aged nautical chart aesthetic: parchment tones, sepia ink, and compass-rose crimson accents",
-  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=EB+Garamond:ital,wght@0,400;0,600;1,400&display=swap",
+  "description": "Cool slate-blue cartographic paper with deep navy ink and warm compass-brass accents, evoking hand-drawn nautical charts",
+  "googleFontsUrl": "https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Crimson+Text:ital,wght@0,400;0,700;1,400&display=swap",
   "colors": {
-    "paper": "#f4e9d4",
-    "paperMid": "#e8d9bc",
-    "paperDark": "#c9b28c",
-    "ink": "#3a2c1c",
-    "inkMid": "#6f5a3f",
-    "inkLight": "#9c8763",
-    "accent": "#a03724",
-    "accentLight": "#c2543c",
-    "cellBg": "#fdf7e8",
-    "border": "#b39a74",
-    "hlWord": "#dfd0ac",
-    "hlCell": "#2f6b6a",
-    "hlCellText": "#fdf7e8"
+    "paper":       "#d6e8f2",
+    "paperMid":    "#bbd4e8",
+    "paperDark":   "#84aece",
+    "ink":         "#0b1e30",
+    "inkMid":      "#183d5e",
+    "inkLight":    "#2a638c",
+    "accent":      "#b87600",
+    "accentLight": "#e09a10",
+    "cellBg":      "#ecf4fa",
+    "border":      "#1c3f60",
+    "hlWord":      "#a8d0ee",
+    "hlCell":      "#1a5c9c",
+    "hlCellText":  "#e8f4ff"
   },
   "fonts": {
     "display": "'Cinzel', Georgia, serif",
-    "body": "'EB Garamond', Georgia, serif"
+    "body":    "'Crimson Text', Georgia, serif"
   }
 }
