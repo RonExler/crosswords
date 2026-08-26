@@ -57,6 +57,10 @@ Theme failure is non-fatal — a missing or malformed `theme.json` falls back to
 
 **`scripts/generate-theme.js` runs `claude-opus-5` with thinking on.** Thinking tokens count toward `max_tokens`, and the response's first content block is a thinking block — the script selects the `text` block rather than indexing `content[0]`. Preserve both if you touch the request.
 
+**Themes must stay visually distinct *across* puzzles — the generator can't know this.** It sees one puzzle's title and word list, nothing else, so it happily proposes a warm-parchment palette for a cartography puzzle that then looks just like `dogrescue`'s terracotta. `a5b4339` moved `mapping` off parchment to slate-blue for exactly this reason, and a regenerated theme reintroduced the clash in `622fea3` (reverted in `49541fe`). Before accepting generated output, compare `paper` / `ink` / `accent` against every other puzzle's `theme.json` and look at the gallery page, not just the puzzle page in isolation.
+
+**Regenerating a theme overwrites a hand-vetted design decision.** `theme.json` is committed, so a run is recoverable via git — but treat overwriting an existing theme as a design change needing review, not as a way to smoke-test the script. Point it at a scratch puzzle dir if you only want to verify the script works.
+
 **Deploys are manual.** Pushing to GitHub does not deploy; the `wrangler pages deploy` command above does. Pages project is `crosswords`, production branch `main`.
 
 **Source `.jpz` / `.tsv` files are untracked.** Ingrid exports live alongside the puzzle but aren't committed.
