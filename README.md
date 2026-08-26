@@ -130,14 +130,14 @@ Edit `index.html` at the root of the project. Find the `<div class="puzzle-grid"
 
 ```html
 <a class="puzzle-card" href="/mypuzzle/">
-  <div class="puzzle-card-num">No. III</div>
+  <div class="puzzle-card-num">3</div>
   <h2 class="puzzle-card-title">My Puzzle Title</h2>
   <p class="puzzle-card-theme">One sentence describing the theme</p>
   <span class="puzzle-card-cta">Solve →</span>
 </a>
 ```
 
-Increment the number (`No. III`, `No. IV`, etc.) to match the new puzzle's position.
+Increment the number (`3`, `4`, etc.) to match the new puzzle's position. Use the same integer at the start of the puzzle page's `.cw-subtitle` (e.g. `"3 — One sentence describing the theme"`).
 
 ---
 
@@ -162,7 +162,7 @@ Open [http://localhost:8765/mypuzzle/](http://localhost:8765/mypuzzle/) in your 
 
 ```bash
 git add mypuzzle/ index.html
-git commit -m "Add [Puzzle Title] puzzle (No. III)"
+git commit -m "Add [Puzzle Title] puzzle (3)"
 git push origin main
 ```
 

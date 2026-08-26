@@ -114,8 +114,11 @@ ${THEME_SCHEMA}`;
       'content-type': 'application/json',
     },
     body: JSON.stringify({
-      model: 'claude-opus-4-8',
-      max_tokens: 1024,
+      model: 'claude-opus-5',
+      // Thinking is on by default on Opus 5 and its tokens count toward
+      // max_tokens, so leave headroom above the ~600 tokens of JSON we want.
+      max_tokens: 4096,
+      output_config: { effort: 'low' },
       system: SYSTEM_PROMPT,
       messages: [{ role: 'user', content: userPrompt }],
     }),
@@ -127,7 +130,13 @@ ${THEME_SCHEMA}`;
   }
 
   const result = await response.json();
-  const text   = result.content?.[0]?.text ?? '';
+
+  if (result.stop_reason === 'refusal') {
+    throw new Error(`API declined the request (${result.stop_details?.category ?? 'unknown'})`);
+  }
+
+  // With thinking on, content[0] is a thinking block — pick the text block.
+  const text = result.content?.find(b => b.type === 'text')?.text ?? '';
 
   let theme;
   try {
